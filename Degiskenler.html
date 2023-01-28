@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        JS burda olduğu gibi script taglarının arasında yazabilirsiniz veya 
+        <script src="js_bulundugu_yer.js" />
+        şeklinde de çağırabilirsiniz.
+    -->
+    <script>
+      /*
+            Şuanda yazdığım alanlar yorum satırı olarak geçiyor 
+            bu sayfayı chrome da açtığınız zaman bu satırları 
+            chrome okumadan geçer. Yorum satırları açıklama yazmak 
+            için kullanılır.
+            
+            eğer bir satırdan fazla açıklama yazıcaksan /* Bu araya açıklama yazılır * /
+            eğer tek satır yazılacaksa // Buraya açıklama yazılır 
+        */
+
+      /*
+            Değişkenler Tipleri
+            -----------------------
+            String,
+            Number,
+            Boolean,
+            Undefined,
+            Null,
+            Object,
+            Array,
+            Function
+
+            Js değişkenleri üç şekilde tanımlayabilirsiniz
+            var, let, const
+            
+            Genel olarak let ile const kullanılır eğer tanımladığınız değişken 
+            tekrar değişmiycekse const kullanılır fakat değişken değiştirilcek
+            let kullanılır
+
+            Örnek
+        */
+
+      // 1-STRING --------------------------------------------------------------------
+
+      // Değişken tanımlanırken türkçe karekter kullanılmaz
+      const bu_degisken_sabit_olcak = "Hello World!";
+
+      let bu_degiskeni_birazdan_degistiricegim = "Berat";
+      bu_degiskeni_birazdan_degistiricegim = "Eke";
+
+      // console.log sayafayı açtıktan sonra sağ click incele dediğiniz de
+      // konsol alanında log lama yarar
+
+      console.log(bu_degisken_sabit_olcak);
+      console.log(bu_degiskeni_birazdan_degistiricegim);
+
+      // Degisken tipini ogrene bilmek icin typeof kullanılır
+      console.log(typeof bu_degisken_sabit_olcak);
+      console.log(typeof bu_degiskeni_birazdan_degistiricegim);
+
+      // String tipinin bazı yardımcı methodları
+
+      // toLowerCase methodu yazıyı küçük harfe çevirir
+      console.log(bu_degisken_sabit_olcak.toLowerCase());
+      // replace ilk bulduğu Hell yazısını Tefo ile değiştirir
+      // bütün Hell leri değiştirmek istiyorsan replaceAll
+      // kullanılabilir
+      console.log(bu_degisken_sabit_olcak.replace("Hell", "Tefo"));
+      // includes methodu ile aranan yazı içeriyormu kontrol edebiliriz
+      // includes den sonuç true yada false döner
+      console.log(bu_degisken_sabit_olcak.includes("lo"));
+      // Diğer metodlar için https://www.w3schools.com/js/js_string_methods.asp
+
+      // 2-Number --------------------------------------------------------------------
+      let sayi_degisken = 6.233;
+      console.log(sayi_degisken);
+      // Number Methods
+
+      // toString() sayıyı stringe çevirir
+      console.log(typeof sayi_degisken);
+      console.log(typeof sayi_degisken.toString());
+
+      // toFixed . dan sonra kaç basamak olsunu belirliyor
+      console.log(sayi_degisken.toFixed(1));
+
+      // Eğer yazının içinde number bir değişkenle yazmak isterseniz
+      // ` ` -> şeklinde kullanılmalı ve değişkeni ${} şeklinde yazılmalı
+      console.log(`Sayi değişkenimiz ${sayi_degisken}`);
+
+      // 3-Boolean --------------------------------------------------------------------
+
+      //bu type sadece true ve false den oluşuyor
+      const boolType = true;
+
+      // 4-Undefined --------------------------------------------------------------------
+      // Eğer bir değişkene birşey atanmazsa undifined olur
+      // null gibi boş manasına gelir
+      let unType;
+      console.log(unType);
+
+      // 5-Null --------------------------------------------------------------------
+      // null boş demek eğer bir değişkenin tipi vs belli değilse verilebilir
+      const nType = null;
+      console.log(nType);
+
+      // 6-Object --------------------------------------------------------------------
+      // Objenin sol tarafı key oluyor sağ tarafı value deniyor
+      // value kısmını normal bir değişken gibi her türlü type lı bir value yazılabilir
+      // objType const tanımladık objeye direkt müdahele edemeyiz ama objenin
+      // içeriğini değiştirebiliriz
+
+      const objType = {
+        name: "Berat",
+        surname: "Eke",
+        age: 26,
+        isDev: true,
+      };
+
+      objType.age = 27;
+
+      console.log(objType);
+
+      // Objenin her satırına obj.satirAdi şeklinde ulabiliriz
+      console.log(objType.name);
+
+      // Objeyi stringte yazdıralım
+      console.log(
+        `Benim adım ${objType.name} ${objType.surname} ve ${objType.age} yaşındayım`
+      );
+
+      // objeye yeni keyli eleman eklemek için
+      objType.leb = "lebi";
+
+      // 7-Array --------------------------------------------------------------------
+      // Array liste halinde tutulan değişkenlerdir
+      // arrayın içeriği gene obje de olduğu gibi farklı typelarda olabilir
+      // Array index    0      1       2      şeklindedir
+      const colors = ["red", "blue", "green"];
+
+      // Methodlar
+      // array yeni eleman eklemek için push methodu kullanılır
+      // yeni elaman listenin sonuna eklenir
+      colors.push(46);
+      console.log(colors);
+
+      // Pop array son elamnını siler
+      colors.pop();
+      console.log(colors);
+
+      // find red geçen itemin index numarasını verir
+      console.log(colors.findIndex((color) => color === "red"));
+
+      // Arrayın çok fazla methodu var
+      // https://www.w3schools.com/js/js_array_methods.asp buradan bakabilirsiniz
+
+      // 8-Function --------------------------------------------------------------------
+      // Gene önemli type den birisidir function seneryo yazılmalık bir alandır
+      // yazılan senaryoya göre bir çıktı döndürebilirsiniz veya
+      // gelen değerlere göre başka değerleri değiştirmeye, yazdırmaya yarayabilir
+
+      const functionName = () => {
+        console.log("Ben bir fonksiyonum");
+      };
+
+      // fonksiyon functionName() şeklinde çalıştırılır
+      functionName();
+
+      // fonksiyon parametre vermek istiyorsak parantez içine yazılır
+      const isimleSoyIsımBirlestir = (isim, soyisim) => {
+        console.log(`${isim} ${soyisim}`);
+      };
+      isimleSoyIsımBirlestir("Berat", "Eke");
+
+      // Fonksiyon === Method tur
+      // Fonksiyon bu şekilde de tanımlanabilir
+      function denemeFunction() {
+        console.log("Deneme Method");
+      }
+      denemeFunction()
+
+      // fonksiyon birşeyler döndürmesini bir işlem yapmasını istiyorsak return kullanabiliriz
+      const toplamaIsleminiHesapla = (a, b) => {
+        return a + b;
+      };
+      const toplamlari = toplamaIsleminiHesapla(4, 6)
+      console.log(toplamlari);
+      
+
+    </script>
+  </body>
+</html>
