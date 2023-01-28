@@ -47,7 +47,34 @@
       if (1 < 2) console.log("1, 2 den büyük");
       else console.log("1, 2 den büyük değil");
 
-      
+      // For döngüsü
+      // 1 den 10 a kadar
+      // başlıyacağı yer; konrolün sağlandığı yere kadar dön; kontrol sağlanmıyorsa bu işlemi tekrar yap
+      // index++ === index = index + 1 -> indexe 1 er ekleyerek devam ediyor
+      for (let index = 0; index < 10; index++) {
+        console.log(index);
+      }
+
+      // bir listemiz var her elemanı tek tek loga yazdırmak istiyorsak
+      // bunun icin forEach methodundan yararlancaz
+      const listemiz = ["berat", "eke", 46, "for dongusu", "icin", "listemiz"];
+      // forEach methodu içine fonksiyon alıyor ve bu fonksiyona her item ı tek tek dönüyor
+      listemiz.forEach((item) => {
+        console.log(item);
+      });
+
+      // forEach methoduna benzeyen bir methodumuz var o da map
+      listemiz.map((item) => {
+        console.log(item);
+      });
+
+      // forEach ile map in arasındaki fark ise map içine verilen method return yapan birşey varsa
+      // o anki item return ile değişir örneğin
+      // listemizin içindeki her itemi 1 yapalım
+      const listemizinHerItemi1 = listemiz.map((item) => {
+        return 1;
+      });
+      console.log(listemizinHerItemi1);
     </script>
   </body>
 </html>
